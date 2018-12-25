@@ -1,0 +1,1228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Version">
+        <s:complexType />
+      </s:element>
+      <s:element name="VersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Heartbeat">
+        <s:complexType />
+      </s:element>
+      <s:element name="HeartbeatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HeartbeatResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ivrnumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OpenSessionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenSessionWOConference">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenSessionWOConferenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OpenSessionWOConferenceResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PlayMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PlayMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PlayMessageResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloseSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloseSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CloseSessionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeMessageResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetControlDictionary">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetControlDictionaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetControlDictionaryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendToHuntsDic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendToHuntsDicResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendToHuntsDicResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLinesStatus">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLinesStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLinesStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHunts">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetHuntsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHuntsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeLineStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="line" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeLineStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeLineStatusResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearControlDictionary">
+        <s:complexType />
+      </s:element>
+      <s:element name="ClearControlDictionaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClearControlDictionaryResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHuntInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hunt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHuntInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHuntInfoResult" type="tns:HuntInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="HuntInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="total" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="free" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="long" type="s:long" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="HuntInfo" nillable="true" type="tns:HuntInfo" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="VersionSoapIn">
+    <wsdl:part name="parameters" element="tns:Version" />
+  </wsdl:message>
+  <wsdl:message name="VersionSoapOut">
+    <wsdl:part name="parameters" element="tns:VersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="HeartbeatSoapIn">
+    <wsdl:part name="parameters" element="tns:Heartbeat" />
+  </wsdl:message>
+  <wsdl:message name="HeartbeatSoapOut">
+    <wsdl:part name="parameters" element="tns:HeartbeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="OpenSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:OpenSession" />
+  </wsdl:message>
+  <wsdl:message name="OpenSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:OpenSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="OpenSessionWOConferenceSoapIn">
+    <wsdl:part name="parameters" element="tns:OpenSessionWOConference" />
+  </wsdl:message>
+  <wsdl:message name="OpenSessionWOConferenceSoapOut">
+    <wsdl:part name="parameters" element="tns:OpenSessionWOConferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="PlayMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:PlayMessage" />
+  </wsdl:message>
+  <wsdl:message name="PlayMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:PlayMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="CloseSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:CloseSession" />
+  </wsdl:message>
+  <wsdl:message name="CloseSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:CloseSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeMessage" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetControlDictionarySoapIn">
+    <wsdl:part name="parameters" element="tns:GetControlDictionary" />
+  </wsdl:message>
+  <wsdl:message name="GetControlDictionarySoapOut">
+    <wsdl:part name="parameters" element="tns:GetControlDictionaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendToHuntsDicSoapIn">
+    <wsdl:part name="parameters" element="tns:SendToHuntsDic" />
+  </wsdl:message>
+  <wsdl:message name="SendToHuntsDicSoapOut">
+    <wsdl:part name="parameters" element="tns:SendToHuntsDicResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLinesStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLinesStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetLinesStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLinesStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHuntsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHunts" />
+  </wsdl:message>
+  <wsdl:message name="GetHuntsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHuntsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLineStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeLineStatus" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLineStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeLineStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearControlDictionarySoapIn">
+    <wsdl:part name="parameters" element="tns:ClearControlDictionary" />
+  </wsdl:message>
+  <wsdl:message name="ClearControlDictionarySoapOut">
+    <wsdl:part name="parameters" element="tns:ClearControlDictionaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHuntInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHuntInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetHuntInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHuntInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="VersionHttpGetIn" />
+  <wsdl:message name="VersionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HeartbeatHttpGetIn" />
+  <wsdl:message name="HeartbeatHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="OpenSessionHttpGetIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="ivrnumber" type="s:string" />
+    <wsdl:part name="message" type="s:string" />
+    <wsdl:part name="language" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OpenSessionHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="OpenSessionWOConferenceHttpGetIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="message" type="s:string" />
+    <wsdl:part name="language" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OpenSessionWOConferenceHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="PlayMessageHttpGetIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="message" type="s:string" />
+    <wsdl:part name="language" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PlayMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CloseSessionHttpGetIn">
+    <wsdl:part name="source" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CloseSessionHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpGetIn">
+    <wsdl:part name="source" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessageHttpGetIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="message" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetControlDictionaryHttpGetIn" />
+  <wsdl:message name="GetControlDictionaryHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendToHuntsDicHttpGetIn">
+    <wsdl:part name="hd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendToHuntsDicHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetLinesStatusHttpGetIn" />
+  <wsdl:message name="GetLinesStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHuntsHttpGetIn" />
+  <wsdl:message name="GetHuntsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLineStatusHttpGetIn">
+    <wsdl:part name="line" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLineStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ClearControlDictionaryHttpGetIn" />
+  <wsdl:message name="ClearControlDictionaryHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetHuntInfoHttpGetIn">
+    <wsdl:part name="hunt" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHuntInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:HuntInfo" />
+  </wsdl:message>
+  <wsdl:message name="VersionHttpPostIn" />
+  <wsdl:message name="VersionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HeartbeatHttpPostIn" />
+  <wsdl:message name="HeartbeatHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="OpenSessionHttpPostIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="ivrnumber" type="s:string" />
+    <wsdl:part name="message" type="s:string" />
+    <wsdl:part name="language" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OpenSessionHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="OpenSessionWOConferenceHttpPostIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="message" type="s:string" />
+    <wsdl:part name="language" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OpenSessionWOConferenceHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="PlayMessageHttpPostIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="message" type="s:string" />
+    <wsdl:part name="language" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PlayMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CloseSessionHttpPostIn">
+    <wsdl:part name="source" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CloseSessionHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpPostIn">
+    <wsdl:part name="source" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessageHttpPostIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="message" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetControlDictionaryHttpPostIn" />
+  <wsdl:message name="GetControlDictionaryHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendToHuntsDicHttpPostIn">
+    <wsdl:part name="hd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendToHuntsDicHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetLinesStatusHttpPostIn" />
+  <wsdl:message name="GetLinesStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHuntsHttpPostIn" />
+  <wsdl:message name="GetHuntsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLineStatusHttpPostIn">
+    <wsdl:part name="line" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeLineStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ClearControlDictionaryHttpPostIn" />
+  <wsdl:message name="ClearControlDictionaryHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetHuntInfoHttpPostIn">
+    <wsdl:part name="hunt" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHuntInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:HuntInfo" />
+  </wsdl:message>
+  <wsdl:portType name="ITNVPlayMsgManagerSoap">
+    <wsdl:operation name="Version">
+      <wsdl:input message="tns:VersionSoapIn" />
+      <wsdl:output message="tns:VersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Heartbeat">
+      <wsdl:input message="tns:HeartbeatSoapIn" />
+      <wsdl:output message="tns:HeartbeatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenSession">
+      <wsdl:input message="tns:OpenSessionSoapIn" />
+      <wsdl:output message="tns:OpenSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenSessionWOConference">
+      <wsdl:input message="tns:OpenSessionWOConferenceSoapIn" />
+      <wsdl:output message="tns:OpenSessionWOConferenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayMessage">
+      <wsdl:input message="tns:PlayMessageSoapIn" />
+      <wsdl:output message="tns:PlayMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseSession">
+      <wsdl:input message="tns:CloseSessionSoapIn" />
+      <wsdl:output message="tns:CloseSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:input message="tns:GetMessageSoapIn" />
+      <wsdl:output message="tns:GetMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessage">
+      <wsdl:input message="tns:ChangeMessageSoapIn" />
+      <wsdl:output message="tns:ChangeMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetControlDictionary">
+      <wsdl:input message="tns:GetControlDictionarySoapIn" />
+      <wsdl:output message="tns:GetControlDictionarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendToHuntsDic">
+      <wsdl:input message="tns:SendToHuntsDicSoapIn" />
+      <wsdl:output message="tns:SendToHuntsDicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinesStatus">
+      <wsdl:input message="tns:GetLinesStatusSoapIn" />
+      <wsdl:output message="tns:GetLinesStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHunts">
+      <wsdl:input message="tns:GetHuntsSoapIn" />
+      <wsdl:output message="tns:GetHuntsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeLineStatus">
+      <wsdl:input message="tns:ChangeLineStatusSoapIn" />
+      <wsdl:output message="tns:ChangeLineStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearControlDictionary">
+      <wsdl:input message="tns:ClearControlDictionarySoapIn" />
+      <wsdl:output message="tns:ClearControlDictionarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHuntInfo">
+      <wsdl:input message="tns:GetHuntInfoSoapIn" />
+      <wsdl:output message="tns:GetHuntInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ITNVPlayMsgManagerHttpGet">
+    <wsdl:operation name="Version">
+      <wsdl:input message="tns:VersionHttpGetIn" />
+      <wsdl:output message="tns:VersionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Heartbeat">
+      <wsdl:input message="tns:HeartbeatHttpGetIn" />
+      <wsdl:output message="tns:HeartbeatHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenSession">
+      <wsdl:input message="tns:OpenSessionHttpGetIn" />
+      <wsdl:output message="tns:OpenSessionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenSessionWOConference">
+      <wsdl:input message="tns:OpenSessionWOConferenceHttpGetIn" />
+      <wsdl:output message="tns:OpenSessionWOConferenceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayMessage">
+      <wsdl:input message="tns:PlayMessageHttpGetIn" />
+      <wsdl:output message="tns:PlayMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseSession">
+      <wsdl:input message="tns:CloseSessionHttpGetIn" />
+      <wsdl:output message="tns:CloseSessionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:input message="tns:GetMessageHttpGetIn" />
+      <wsdl:output message="tns:GetMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessage">
+      <wsdl:input message="tns:ChangeMessageHttpGetIn" />
+      <wsdl:output message="tns:ChangeMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetControlDictionary">
+      <wsdl:input message="tns:GetControlDictionaryHttpGetIn" />
+      <wsdl:output message="tns:GetControlDictionaryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendToHuntsDic">
+      <wsdl:input message="tns:SendToHuntsDicHttpGetIn" />
+      <wsdl:output message="tns:SendToHuntsDicHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinesStatus">
+      <wsdl:input message="tns:GetLinesStatusHttpGetIn" />
+      <wsdl:output message="tns:GetLinesStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHunts">
+      <wsdl:input message="tns:GetHuntsHttpGetIn" />
+      <wsdl:output message="tns:GetHuntsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeLineStatus">
+      <wsdl:input message="tns:ChangeLineStatusHttpGetIn" />
+      <wsdl:output message="tns:ChangeLineStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearControlDictionary">
+      <wsdl:input message="tns:ClearControlDictionaryHttpGetIn" />
+      <wsdl:output message="tns:ClearControlDictionaryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHuntInfo">
+      <wsdl:input message="tns:GetHuntInfoHttpGetIn" />
+      <wsdl:output message="tns:GetHuntInfoHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ITNVPlayMsgManagerHttpPost">
+    <wsdl:operation name="Version">
+      <wsdl:input message="tns:VersionHttpPostIn" />
+      <wsdl:output message="tns:VersionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Heartbeat">
+      <wsdl:input message="tns:HeartbeatHttpPostIn" />
+      <wsdl:output message="tns:HeartbeatHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenSession">
+      <wsdl:input message="tns:OpenSessionHttpPostIn" />
+      <wsdl:output message="tns:OpenSessionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenSessionWOConference">
+      <wsdl:input message="tns:OpenSessionWOConferenceHttpPostIn" />
+      <wsdl:output message="tns:OpenSessionWOConferenceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayMessage">
+      <wsdl:input message="tns:PlayMessageHttpPostIn" />
+      <wsdl:output message="tns:PlayMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseSession">
+      <wsdl:input message="tns:CloseSessionHttpPostIn" />
+      <wsdl:output message="tns:CloseSessionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <wsdl:input message="tns:GetMessageHttpPostIn" />
+      <wsdl:output message="tns:GetMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessage">
+      <wsdl:input message="tns:ChangeMessageHttpPostIn" />
+      <wsdl:output message="tns:ChangeMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetControlDictionary">
+      <wsdl:input message="tns:GetControlDictionaryHttpPostIn" />
+      <wsdl:output message="tns:GetControlDictionaryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendToHuntsDic">
+      <wsdl:input message="tns:SendToHuntsDicHttpPostIn" />
+      <wsdl:output message="tns:SendToHuntsDicHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinesStatus">
+      <wsdl:input message="tns:GetLinesStatusHttpPostIn" />
+      <wsdl:output message="tns:GetLinesStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHunts">
+      <wsdl:input message="tns:GetHuntsHttpPostIn" />
+      <wsdl:output message="tns:GetHuntsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeLineStatus">
+      <wsdl:input message="tns:ChangeLineStatusHttpPostIn" />
+      <wsdl:output message="tns:ChangeLineStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearControlDictionary">
+      <wsdl:input message="tns:ClearControlDictionaryHttpPostIn" />
+      <wsdl:output message="tns:ClearControlDictionaryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHuntInfo">
+      <wsdl:input message="tns:GetHuntInfoHttpPostIn" />
+      <wsdl:output message="tns:GetHuntInfoHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ITNVPlayMsgManagerSoap" type="tns:ITNVPlayMsgManagerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Version">
+      <soap:operation soapAction="http://tempuri.org/Version" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Heartbeat">
+      <soap:operation soapAction="http://tempuri.org/Heartbeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenSession">
+      <soap:operation soapAction="http://tempuri.org/OpenSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenSessionWOConference">
+      <soap:operation soapAction="http://tempuri.org/OpenSessionWOConference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayMessage">
+      <soap:operation soapAction="http://tempuri.org/PlayMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseSession">
+      <soap:operation soapAction="http://tempuri.org/CloseSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <soap:operation soapAction="http://tempuri.org/GetMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessage">
+      <soap:operation soapAction="http://tempuri.org/ChangeMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetControlDictionary">
+      <soap:operation soapAction="http://tempuri.org/GetControlDictionary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendToHuntsDic">
+      <soap:operation soapAction="http://tempuri.org/SendToHuntsDic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinesStatus">
+      <soap:operation soapAction="http://tempuri.org/GetLinesStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHunts">
+      <soap:operation soapAction="http://tempuri.org/GetHunts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeLineStatus">
+      <soap:operation soapAction="http://tempuri.org/ChangeLineStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearControlDictionary">
+      <soap:operation soapAction="http://tempuri.org/ClearControlDictionary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHuntInfo">
+      <soap:operation soapAction="http://tempuri.org/GetHuntInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ITNVPlayMsgManagerSoap12" type="tns:ITNVPlayMsgManagerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Version">
+      <soap12:operation soapAction="http://tempuri.org/Version" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Heartbeat">
+      <soap12:operation soapAction="http://tempuri.org/Heartbeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenSession">
+      <soap12:operation soapAction="http://tempuri.org/OpenSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenSessionWOConference">
+      <soap12:operation soapAction="http://tempuri.org/OpenSessionWOConference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayMessage">
+      <soap12:operation soapAction="http://tempuri.org/PlayMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseSession">
+      <soap12:operation soapAction="http://tempuri.org/CloseSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <soap12:operation soapAction="http://tempuri.org/GetMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessage">
+      <soap12:operation soapAction="http://tempuri.org/ChangeMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetControlDictionary">
+      <soap12:operation soapAction="http://tempuri.org/GetControlDictionary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendToHuntsDic">
+      <soap12:operation soapAction="http://tempuri.org/SendToHuntsDic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinesStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetLinesStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHunts">
+      <soap12:operation soapAction="http://tempuri.org/GetHunts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeLineStatus">
+      <soap12:operation soapAction="http://tempuri.org/ChangeLineStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearControlDictionary">
+      <soap12:operation soapAction="http://tempuri.org/ClearControlDictionary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHuntInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetHuntInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ITNVPlayMsgManagerHttpGet" type="tns:ITNVPlayMsgManagerHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Version">
+      <http:operation location="/Version" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Heartbeat">
+      <http:operation location="/Heartbeat" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenSession">
+      <http:operation location="/OpenSession" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenSessionWOConference">
+      <http:operation location="/OpenSessionWOConference" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayMessage">
+      <http:operation location="/PlayMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseSession">
+      <http:operation location="/CloseSession" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <http:operation location="/GetMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessage">
+      <http:operation location="/ChangeMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetControlDictionary">
+      <http:operation location="/GetControlDictionary" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendToHuntsDic">
+      <http:operation location="/SendToHuntsDic" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinesStatus">
+      <http:operation location="/GetLinesStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHunts">
+      <http:operation location="/GetHunts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeLineStatus">
+      <http:operation location="/ChangeLineStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearControlDictionary">
+      <http:operation location="/ClearControlDictionary" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHuntInfo">
+      <http:operation location="/GetHuntInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ITNVPlayMsgManagerHttpPost" type="tns:ITNVPlayMsgManagerHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Version">
+      <http:operation location="/Version" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Heartbeat">
+      <http:operation location="/Heartbeat" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenSession">
+      <http:operation location="/OpenSession" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenSessionWOConference">
+      <http:operation location="/OpenSessionWOConference" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayMessage">
+      <http:operation location="/PlayMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseSession">
+      <http:operation location="/CloseSession" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessage">
+      <http:operation location="/GetMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessage">
+      <http:operation location="/ChangeMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetControlDictionary">
+      <http:operation location="/GetControlDictionary" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendToHuntsDic">
+      <http:operation location="/SendToHuntsDic" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinesStatus">
+      <http:operation location="/GetLinesStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHunts">
+      <http:operation location="/GetHunts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeLineStatus">
+      <http:operation location="/ChangeLineStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearControlDictionary">
+      <http:operation location="/ClearControlDictionary" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHuntInfo">
+      <http:operation location="/GetHuntInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ITNVPlayMsgManager">
+    <wsdl:port name="ITNVPlayMsgManagerSoap" binding="tns:ITNVPlayMsgManagerSoap">
+      <soap:address location="http://localhost:50178/ITNVPlayMsgManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ITNVPlayMsgManagerSoap12" binding="tns:ITNVPlayMsgManagerSoap12">
+      <soap12:address location="http://localhost:50178/ITNVPlayMsgManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ITNVPlayMsgManagerHttpGet" binding="tns:ITNVPlayMsgManagerHttpGet">
+      <http:address location="http://localhost:50178/ITNVPlayMsgManager.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ITNVPlayMsgManagerHttpPost" binding="tns:ITNVPlayMsgManagerHttpPost">
+      <http:address location="http://localhost:50178/ITNVPlayMsgManager.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
